@@ -34,7 +34,7 @@ module Lvm_conf =
    let type_array = 
      [ tab . key  id . indent . eq . indent . Util.del_str "[" . ( array_entry_first* . array_entry_last ) . Util.del_str "]" ]
 
-   let section =  [ indent . key id . indent . del /\{/ "{" . ( empty | comment | ( type | type_array ) . eol )* . del /\}/ "}" ]
+   let section =  [ indent . key id . indent . del /\{/ "{" . ( empty | comment | ( type | type_array ) . eol )* . del /[ \t]*\}/ "}" ]
 
    let main = ( empty | comment )
 
